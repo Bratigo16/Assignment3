@@ -81,32 +81,32 @@ ArrayList<Supplier> Arraysupplier= new ArrayList<Supplier>();
     }
     //Question_2B)
     public void sortCustomerDisplay(){
-        String[] sortID = new String[Arraycustomer.size()];
-        ArrayList<Customer> sortA= new ArrayList<Customer>();
-        int count = Arraycustomer.size();
-        for (int i = 0; i < count; i++) {
-            sortID[i] = Arraycustomer.get(i).getStHolderId();
+        String[] arrayBS = new String[Arraycustomer.size()];
+        ArrayList<Customer> arrayB= new ArrayList<Customer>();
+        int countLength = Arraycustomer.size();
+        for (int i = 0; i < countLength; i++) {
+            arrayBS[i] = Arraycustomer.get(i).getStHolderId();
         }
-        Arrays.sort(sortID);
+        Arrays.sort(arrayBS);
         
-        for (int i = 0; i < count; i++) {
-            for (int j = 0; j < count; j++) {
-                if (sortID[i].equals(Arraycustomer.get(j).getStHolderId())){
-                    sortA.add(Arraycustomer.get(j));
+        for (int i = 0; i < countLength; i++) {
+            for (int j = 0; j < countLength; j++) {
+                if (arrayBS[i].equals(Arraycustomer.get(j).getStHolderId())){
+                    arrayB.add(Arraycustomer.get(j));
                 }
             }
         }
         Arraycustomer.clear();
-        Arraycustomer = sortA;
+        Arraycustomer = arrayB;
     }
     
     //Question_2C)
     public int getAge(String dob){
         String[] seperation = dob.split("-");
         
-        LocalDate birth = LocalDate.of(Integer.parseInt(seperation[0]), Integer.parseInt(seperation[1]), Integer.parseInt(seperation[2]));
-        LocalDate current = LocalDate.now();
-        Period difference = Period.between(birth, current);
+        LocalDate bornDay = LocalDate.of(Integer.parseInt(seperation[0]), Integer.parseInt(seperation[1]), Integer.parseInt(seperation[2]));
+        LocalDate currentDate = LocalDate.now();
+        Period difference = Period.between(bornDay, currentDate);
         int age = difference.getYears();
         return age;
     }
@@ -150,8 +150,7 @@ ArrayList<Supplier> Arraysupplier= new ArrayList<Supplier>();
         }
     }
     
-    
-    
+     
     
     // Question_2f)
     public String rent(){
@@ -173,23 +172,23 @@ ArrayList<Supplier> Arraysupplier= new ArrayList<Supplier>();
     
     //Question_3A)
     public void sortSuppliersDisplay(){
-        String[] sortID = new String[Arraysupplier.size()];
-        ArrayList<Supplier> sortA= new ArrayList<Supplier>();
-        int count = Arraysupplier.size();
-        for (int i = 0; i < count; i++) {
-            sortID[i] = Arraysupplier.get(i).getName();
+        String[] arrayBS = new String[Arraysupplier.size()];
+        ArrayList<Supplier> arrayB= new ArrayList<Supplier>();
+        int countLength = Arraysupplier.size();
+        for (int i = 0; i < countLength; i++) {
+            arrayBS[i] = Arraysupplier.get(i).getName();
         }
-        Arrays.sort(sortID);
+        Arrays.sort(arrayBS);
         
-        for (int i = 0; i < count; i++) {
-            for (int j = 0; j < count; j++) {
-                if (sortID[i].equals(Arraysupplier.get(j).getName())){
-                    sortA.add(Arraysupplier.get(j));
+        for (int i = 0; i < countLength; i++) {
+            for (int j = 0; j < countLength; j++) {
+                if (arrayBS[i].equals(Arraysupplier.get(j).getName())){
+                    arrayB.add(Arraysupplier.get(j));
                 }
             }
         }
         Arraysupplier.clear();
-        Arraysupplier = sortA;
+        Arraysupplier = arrayB;
     }
    
    public void displaySupplieroutfile(){
